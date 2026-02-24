@@ -3,7 +3,7 @@ function calcLoan() {
   let gram = +document.getElementById("gram").value;
   let rate = +document.getElementById("rate").value;
   let interest = +document.getElementById("interest").value;
-  let type = document.getElementById("type").value; // typo fixed
+  let type = document.getElementById("type").value;
 
   if (gram <= 0 || rate <= 0 || interest <= 0 || type === "") {
     document.getElementById("result").innerHTML = 
@@ -11,19 +11,10 @@ function calcLoan() {
     return;
   }
 
-  // Loan amount
   let loanAmount = gram * rate;
-
-  // Auto period: 12 months or 52 weeks
   let period = (type === "monthly") ? 12 : 52;
-
-  // Total interest = interest per period * number of periods
   let totalInterest = interest * period;
-
-  // Total amount
   let totalAmount = loanAmount + totalInterest;
-
-  // Per month/week payment
   let perPay = totalAmount / period;
   let label = (type === "monthly") ? "மாதம்" : "வாரம்";
 
@@ -38,8 +29,23 @@ function calcLoan() {
 
 async function fetchGoldRate() {
   try {
+    let today = new Date().toISOString().split('T')[0];
+
+    let savedDate = localStorage.getItem("gold_date");
+    let savedRate = localStorage.getItem("gold_rate");
+
+    // Same day → use saved value
+    if (savedDate === today && savedRate) {
+      console.log("Using saved gold rate");
+      document.getElementById("goldRate").innerText = savedRate;
+      return;
+    }
+
+    // New day → API call
+    console.log("Fetching new gold rate from API");
+
     const myHeaders = new Headers();
-    myHeaders.append("x-access-token", "goldapi-ktrjsmlyxh1vs-io"); // GoldAPI Key
+    myHeaders.append("x-access-token", "goldapi-ktrjsmlyxh1vs-io");
     myHeaders.append("Content-Type", "application/json");
 
     const requestOptions = { method: 'GET', headers: myHeaders, redirect: 'follow' };
@@ -47,38 +53,23 @@ async function fetchGoldRate() {
     const response = await fetch("https://www.goldapi.io/api/XAU/INR", requestOptions);
     const data = await response.json();
 
-    // GoldAPI returns price per ounce, but we need per gram
-    // 1 ounce = 31.1035 grams
     let pricePerGram = data.price / 31.1035;
+    let finalRate = pricePerGram.toFixed(0);
 
-    // Show rounded price
-    document.getElementById("goldRate").innerText = pricePerGram.toFixed(0);
+    // Save in localStorage
+    localStorage.setItem("gold_date", today);
+    localStorage.setItem("gold_rate", finalRate);
+
+    document.getElementById("goldRate").innerText = finalRate;
 
   } catch (error) {
     console.error('Gold API fetch error:', error);
-    // Fallback value in case API fails
-    document.getElementById("goldRate").innerText = 5000;
+
+    // fallback
+    let savedRate = localStorage.getItem("gold_rate") || 5000;
+    document.getElementById("goldRate").innerText = savedRate;
   }
 }
 
-// Call the function on page load
+// Call on page load
 window.onload = fetchGoldRate;
-
-
-
-
-// var myHeaders = new Headers();
-// myHeaders.append("x-access-token", "goldapi-19o1g6smlyro24y-io");
-// myHeaders.append("Content-Type", "application/json");
-
-// var requestOptions = {
-//   method: 'GET',
-//   headers: myHeaders,
-//   redirect: 'follow'
-// };
-
-// fetch("https://www.goldapi.io/api/XAU/INR", requestOptions)
-//   .then(response => response.text())
-//   .then(result => console.log(result))
-//   .catch(error => console.log('error', error));
-
