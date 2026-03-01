@@ -10,144 +10,23 @@
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
- <style>
-  :root{
-    --primary: #8B1E1E;
-    --dark: #6F1414;
-    --gold: #D4AF37;
-    --soft-gold: #E6C15A;
-    --bg: #FBF4E9;
-  }
+<link rel="stylesheet" href="style.css">  
 
-  html{ scroll-behavior: smooth; }
-
-  body{
-    font-family: Segoe UI;
-    background: var(--bg);
-  }
-
-  .navbar{
-    background: linear-gradient(90deg,var(--dark),var(--primary));
-    position: sticky;
-    top: 0;
-    z-index: 999;
-  }
-
-  .navbar-brand,
-  .nav-link{
-    color: #fff !important;
-    font-weight: 600;
-  }
-
-  .nav-link:hover{
-    color: var(--gold) !important;
-  }
-
-  section{ padding: 80px 15px; }
-
-  .hero{
-    background: linear-gradient(135deg,#fff7e0,#fde6a8);
-    text-align: center;
-  }
-
-  .box{
-    background: #fff;
-    padding: 25px;
-    border-radius: 15px;
-    border: 2px solid var(--gold);
-    box-shadow: 0 8px 25px rgba(139,30,30,0.15);
-    transition: .3s;
-  }
-
-  .box:hover{ transform: translateY(-10px); }
-
-  .btn-warning{
-    background: var(--gold);
-    border: none;
-    font-weight: bold;
-  }
-
-  .btn-warning:hover{
-    background: var(--soft-gold);
-  }
-
-  .whatsapp{
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 999;
-  }
-
-  .whatsapp img{ width: 55px; }
-
-  .call{
-    position: fixed;
-    bottom: 90px;
-    right: 25px;
-    background: var(--primary);
-    color: white;
-    font-size: 22px;
-    padding: 12px 15px;
-    border-radius: 50%;
-    text-decoration: none;
-  }
-
-  .carousel-item img{
-    height: 450px;
-    object-fit: cover;
-    border-radius: 15px;
-  }
-
-  footer{
-    background: linear-gradient(90deg,var(--dark),var(--primary));
-  }
-  .contact-adv{
-  background: linear-gradient(135deg,#fff7dc,#fde6a8,#fff);
-}
-
-.contact-card{
-  background: #fff;
-  padding: 35px 25px;
-  border-radius: 22px;
-  text-align: center;
-  text-decoration: none;
-  color: #333;
-  border: 2px solid var(--gold);
-  box-shadow: 0 10px 30px rgba(0,0,0,.15);
-  transition: .35s;
-  display: block;
-}
-
-.contact-card:hover{
-  transform: translateY(-10px) scale(1.04);
-  box-shadow: 0 15px 40px rgba(0,0,0,.25);
-}
-
-.contact-card .icon{
-  font-size: 38px;
-  margin-bottom: 12px;
-}
-
-.whatsapp-bg{
-  background: linear-gradient(135deg,#25D366,#1ebe57);
-  color: #fff;
-  border: none;
-}
-
-.whatsapp-bg:hover{
-  color: #fff;
-}
-
-</style>
 </head>
 <body>
 <!-- TOP HEADER : LOGO + COMPANY NAME -->
 <div class="top-header text-center py-3"
      style="background:linear-gradient(90deg,#6F1414,#8B1E1E);">
-  <img src="logo.jpg" height="55" class="mb-1">
-  <h3 class="text-white fw-bold m-0" style="font-size:40px;">
-    முத்து பாங்கர்ஸ்
+  <img src="logo.jpg" height="85" class="mb-1">
+<h3 class="text-white fw-bold m-0" style="font-size:clamp(32px,6vw,85px);">    முத்து பாங்கர்ஸ்
   </h3>
+<div
+<h3 class="text-white fw-bold m-0" style="font-size:40px;">
+   15+ ஆண்டுகளின் அனுபவச் சேவை
+  </h3>   
+</div>
+
+
 </div>
 
 <!-- NAVBAR : SECOND LINE -->
@@ -159,12 +38,13 @@
     </button>
 
     <div class="collapse navbar-collapse justify-content-center" id="nav">
-      <ul class="navbar-nav">
+      <ul class="navbar-nav" style="font-size: 25px;">
         <!-- <li class="nav-item"><a class="nav-link" href="#home">முகப்பு</a></li> -->
-        <li class="nav-item"><a class="nav-link" href="#offers">சலுகைகள்</a></li>
-        <li class="nav-item"><a class="nav-link" href="#calculator">கணக்கிடு</a></li>
-        <li class="nav-item"><a class="nav-link" href="#about">எங்களை பற்றி</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">தொடர்பு</a></li>
+         <li class="nav-item me-4"><a class="nav-link" href="#about">எங்களை பற்றி</a></li>
+      <li class="nav-item me-4"><a class="nav-link" href="#offers">சலுகைகள்</a></li>
+<li class="nav-item me-4"><a class="nav-link" href="#calculator">இன்றைய தங்க விலை</a></li>
+
+<li class="nav-item"><a class="nav-link" href="#contact">தொடர்பு</a></li>
       </ul>
     </div>
 
@@ -176,6 +56,56 @@
   <p>10 நிமிடங்களில் உடனடி பணம் | குறைந்த வட்டி | 100% பாதுகாப்பு</p>
   <a href="#calculator" class="btn btn-dark">கணக்கிடு</a>
 </section> -->
+<!-- ABOUT -->
+<section id="about" style="background:#fff8e1;">
+  <div class="container">
+
+    <h2 class="text-center mb-4">🏢 எங்களை பற்றி</h2>
+
+    <p class="text-center fs-5">
+      கடந்த <b>15+ ஆண்டுகளாக</b> முத்து பாங்கர்ஸ்,  
+      நம்பிக்கை, நேர்மை மற்றும் விரைவான சேவையை அடிப்படையாகக் கொண்டு  
+      தங்க அடகு கடன் சேவையில் சிறந்த நிறுவனமாக செயல்பட்டு வருகிறது.
+    </p>
+
+    <div class="row mt-4">
+
+      <div class="col-md-6">
+        <div class="box">
+          <h5>✨ எங்கள் சிறப்பம்சங்கள்</h5>
+          <ul>
+            <li>✔️ 10 நிமிடங்களில் உடனடி பணம்</li>
+            <li>✔️ குறைந்த வட்டி விகிதம்</li>
+            <li>✔️ 100% பாதுகாப்பான தங்க சேமிப்பு</li>
+            <li>✔️ வெளிப்படையான கணக்கீடு</li>
+            <li>✔️ அனுபவமிக்க பணியாளர்கள்</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="box">
+          <h5>💎 எங்கள் நோக்கம்</h5>
+          <p>
+           <b>2 வருடம் வரை வாடிக்கையாளர்களின் நகைகளை ஏலத்திலிருந்து பாதுகாப்பது.</b>
+            வாடிக்கையாளர்களின் அவசர தேவைகளை புரிந்து கொண்டு,  
+            எளிமையான முறையில், பாதுகாப்பான சேவையை வழங்குவதே  
+            எங்கள் பிரதான நோக்கம்.
+          </p>
+
+          <h5 class="mt-3">🤝 எங்கள் உறுதி</h5>
+          <p>
+            ஒவ்வொரு வாடிக்கையாளருக்கும் நேர்மையான சேவை,  
+            நியாயமான வட்டி மற்றும் முழு பாதுகாப்பு  
+            என்பதையே எங்கள் வாக்குறுதியாக வழங்குகிறோம்.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
 <!-- OFFERS -->
 <section id="offers">
@@ -226,83 +156,9 @@
   </div>
 </div>
 
-    <!-- RIGHT : CALCULATOR -->
-    <div class="col-md-6 mb-3">
-      <div class="box">
-        <label>தங்க எடை (கிராம்)</label>
-        <input type="number" id="gram" class="form-control mb-2" placeholder="உதா: 5">
+   
 
-        <label>தங்க விலை (₹ ஒரு கிராம்)</label>
-        <input type="number" id="rate" class="form-control mb-2" placeholder="உதா: 5000">
-         <label>கட்டணம் வகை</label>
-        <select id="type" class="form-control mb-3">
-          <option value="">தேர்ந்தெடு</option>
-          <option value="monthly">மாதம்</option>
-          <option value="weekly">வாரம்</option>
-        </select>
 
-        <label>வட்டி தொகை (மாதம்/வாரம்)</label>
-        <input type="number" id="interest" class="form-control mb-2" placeholder="உதா: 1000">
-
-       
-
-        <button onclick="calcLoan()" class="btn btn-warning w-100">கணக்கிடு</button>
-        <h5 class="text-center mt-3" id="result"></h5>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about" style="background:#fff8e1;">
-  <div class="container">
-
-    <h2 class="text-center mb-4">🏢 எங்களை பற்றி</h2>
-
-    <p class="text-center fs-5">
-      கடந்த <b>20+ ஆண்டுகளாக</b> முத்து பாங்கர்ஸ்,  
-      நம்பிக்கை, நேர்மை மற்றும் விரைவான சேவையை அடிப்படையாகக் கொண்டு  
-      தங்க அடகு கடன் சேவையில் சிறந்த நிறுவனமாக செயல்பட்டு வருகிறது.
-    </p>
-
-    <div class="row mt-4">
-
-      <div class="col-md-6">
-        <div class="box">
-          <h5>✨ எங்கள் சிறப்பம்சங்கள்</h5>
-          <ul>
-            <li>✔️ 10 நிமிடங்களில் உடனடி பணம்</li>
-            <li>✔️ குறைந்த வட்டி விகிதம்</li>
-            <li>✔️ 100% பாதுகாப்பான தங்க சேமிப்பு</li>
-            <li>✔️ வெளிப்படையான கணக்கீடு</li>
-            <li>✔️ அனுபவமிக்க பணியாளர்கள்</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="col-md-6">
-        <div class="box">
-          <h5>💎 எங்கள் நோக்கம்</h5>
-          <p>
-            வாடிக்கையாளர்களின் அவசர தேவைகளை புரிந்து கொண்டு,  
-            எளிமையான முறையில், பாதுகாப்பான சேவையை வழங்குவதே  
-            எங்கள் பிரதான நோக்கம்.
-          </p>
-
-          <h5 class="mt-3">🤝 எங்கள் உறுதி</h5>
-          <p>
-            ஒவ்வொரு வாடிக்கையாளருக்கும் நேர்மையான சேவை,  
-            நியாயமான வட்டி மற்றும் முழு பாதுகாப்பு  
-            என்பதையே எங்கள் வாக்குறுதியாக வழங்குகிறோம்.
-          </p>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-</section>
 
 
 <section id="contact" class="contact-adv">
@@ -315,37 +171,39 @@
     <div class="row g-4 justify-content-center">
 
       <!-- Call Card -->
-      <div class="col-md-4">
-        <a href="tel:9999999999" class="contact-card">
-          <div class="icon">📞</div>
-          <h5>Call Now</h5>
-          <p>99999 99999</p>
-        </a>
-      </div>
+<div class="col-md-4">
+  <a href="tel:8643022732" class="contact-card">
+    <div class="icon">📞</div>
+    <h5>இப்போது அழைக்க</h5>
+    <p>86430 22732</p>
+  </a>
+</div>
 
       <!-- WhatsApp Card -->
       <div class="col-md-4">
-        <a href="https://wa.me/919999999999" target="_blank" class="contact-card whatsapp-bg">
-          <div class="icon">💬</div>
-          <h5>WhatsApp Chat</h5>
-          <p>Instant Support</p>
-        </a>
-      </div>
+  <a href="https://wa.me/918643022732" target="_blank" class="contact-card whatsapp-bg">
+    <div class="icon">💬</div>
+    <h5>வாட்ஸ்அப் உரையாடல்</h5>
+    <p>உடனடி உதவி</p>
+  </a>
+</div>
 
       <!-- Location Card -->
       <div class="col-md-4">
-        <div class="contact-card">
+        <a href="https://www.google.com/maps/search/?api=1&query=முத்து+பாங்கர்ஸ்,+திருமலைக்கோவில்+மேயின்+ரோடு,+குத்துக்கல்வளை,+தென்காசி+மாவட்டம்"
+           target="_blank" class="contact-card location">
           <div class="icon">📍</div>
-          <h5>Visit Us</h5>
-          <p>சென்னை</p>
-        </div>
+          <h5>எங்களைப் பார்வையிடுங்கள்</h5>
+          <p>
+            முத்து பாங்கர்ஸ்,<br>
+            திருமலைக்கோவில் மேயின் ரோடு,<br>
+            குத்துக்கல்வளை – தென்காசி.
+          </p>
+        </a>
       </div>
-
-    </div>
-  </div>
 </section>
 
-<a href="tel:9999999999" class="call">📞</a>
+<!-- ??<a href="tel:9999999999" class="call">📞</a> -->
 
 <footer class="bg-dark text-white text-center p-3">
   © 2026 முத்து பாங்கர்ஸ் | அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை
