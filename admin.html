@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Banner Admin</title>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="script.js"></script>
+
+<style>
+body{
+font-family:Arial;
+padding:40px;
+background:#f5f5f5;
+}
+
+#bannerList img{
+margin-top:10px;
+border-radius:8px;
+}
+
+button{
+margin-top:5px;
+padding:6px 12px;
+cursor:pointer;
+}
+</style>
+
+</head>
+
+<body>
+
+<h2>Banner Management</h2>
+
+<br>
+
+<input type="file" id="fileInput" multiple>
+
+<button onclick="uploadBanners()">Upload Banner</button>
+
+<hr>
+
+<h3>Uploaded Banners</h3>
+
+<div id="bannerList"></div>
+
+</body>
+</html>
