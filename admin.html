@@ -7,34 +7,98 @@
 <script src="script.js"></script>
 
 <style>
+
 body{
-font-family:Arial;
+font-family:Arial, sans-serif;
 padding:40px;
 background:#f5f5f5;
+display:flex;
+justify-content:center;
 }
 
-#bannerList img{
-margin-top:10px;
-border-radius:8px;
+.container{
+width:900px;
+background:white;
+padding:30px;
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+h2{
+margin-bottom:20px;
+}
+
+input[type="file"]{
+padding:8px;
+border:1px solid #ccc;
+border-radius:6px;
+background:#fafafa;
 }
 
 button{
-margin-top:5px;
-padding:6px 12px;
+margin-left:10px;
+padding:8px 16px;
+background:#2c7be5;
+color:white;
+border:none;
+border-radius:6px;
 cursor:pointer;
+font-weight:bold;
 }
+
+button:hover{
+background:#1a5fd0;
+}
+
+hr{
+margin:30px 0;
+}
+
+#bannerList{
+display:flex;
+flex-wrap:wrap;
+gap:20px;
+}
+
+.banner-box{
+width:250px;
+background:white;
+padding:10px;
+border-radius:10px;
+box-shadow:0 0 5px rgba(0,0,0,0.1);
+transition:transform 0.2s;
+}
+
+.banner-box:hover{
+transform:scale(1.03);
+}
+
+.banner-box img{
+width:100%;
+border-radius:8px;
+}
+
+.banner-box button{
+width:100%;
+margin-top:10px;
+background:#dc3545;
+}
+
+.banner-box button:hover{
+background:#b02a37;
+}
+
 </style>
 
 </head>
 
 <body>
 
+<div class="container">
+
 <h2>Banner Management</h2>
 
-<br>
-
 <input type="file" id="fileInput" multiple>
-
 <button onclick="uploadBanners()">Upload Banner</button>
 
 <hr>
@@ -42,6 +106,8 @@ cursor:pointer;
 <h3>Uploaded Banners</h3>
 
 <div id="bannerList"></div>
+
+</div>
 
 </body>
 </html>

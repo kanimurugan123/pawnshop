@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <title>முத்து பாங்கர்ஸ் | தங்க அடகு கடன்</title>
    <link rel="icon" type="image/png" href="logo.jpg">
+   <link href="https://fonts.googleapis.com/css2?family=Mukta+Malar:wght@600&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="script.js"></script>
 
   <!-- Bootstrap -->
@@ -15,20 +17,17 @@
 </head>
 <body>
 <!-- TOP HEADER : LOGO + COMPANY NAME -->
-<div class="top-header text-center py-3"
-     style="background:linear-gradient(90deg,#6F1414,#8B1E1E);">
-  <img src="logo.jpg" height="85" class="mb-1">
-<h3 class="text-white fw-bold m-0" style="font-size:clamp(32px,6vw,85px);">    முத்து பாங்கர்ஸ்
-  </h3>
-<div
-<h3 class="text-white fw-bold m-0" style="font-size:40px;">
-   15+ ஆண்டுகளின் அனுபவச் சேவை
-  </h3>   
+<div class="top-header">
+
+  <img src="logo.jpg" class="logo-left">
+
+  <h1 class="company-title">முத்து பாங்கர்ஸ்</h1>
+<div class="experience-badge">
+  <span class="years">15+</span>
+  <span class="text">ஆண்டுகளாக</span>
 </div>
 
-
 </div>
-
 <!-- NAVBAR : SECOND LINE -->
 <nav class="navbar navbar-expand-lg">
   <div class="container justify-content-center">
@@ -74,11 +73,13 @@
         <div class="box">
           <h5>✨ எங்கள் சிறப்பம்சங்கள்</h5>
           <ul>
-            <li>✔️ 10 நிமிடங்களில் உடனடி பணம்</li>
-            <li>✔️ குறைந்த வட்டி விகிதம்</li>
-            <li>✔️ 100% பாதுகாப்பான தங்க சேமிப்பு</li>
-            <li>✔️ வெளிப்படையான கணக்கீடு</li>
-            <li>✔️ அனுபவமிக்க பணியாளர்கள்</li>
+            <li> உங்கள் நகைக்கு உடனடி பணம்</li>
+            <li> குறைந்த வட்டி விகிதம்</li>
+            <li> 100% பாதுகாப்பான மற்றும் வெளிப்படையான சேவை</li>
+            <li> எளிதான தவணைகள் </li>
+            <li> விவசாயிகள் மற்றும் தொழில் புரிபவர்களுக்கு சிறப்பு கடன் திட்டங்கள்</li>
+            <li> <b>2 வருடம் வரை வாடிக்கையாளர்களின் நகைகளை ஏலத்திலிருந்து பாதுகாப்பது</b></li>
+            <li> பிற வங்கிகளில் உள்ள நகைகளை மாற்றி வைக்கும் வசதி உண்டு</li>
           </ul>
         </div>
       </div>
@@ -87,21 +88,44 @@
         <div class="box">
           <h5>💎 எங்கள் நோக்கம்</h5>
           <p>
-           <b>2 வருடம் வரை வாடிக்கையாளர்களின் நகைகளை ஏலத்திலிருந்து பாதுகாப்பது.</b>
-            வாடிக்கையாளர்களின் அவசர தேவைகளை புரிந்து கொண்டு,  
-            எளிமையான முறையில், பாதுகாப்பான சேவையை வழங்குவதே  
-            எங்கள் பிரதான நோக்கம்.
+         
+            <ul>
+              <li> இந்தியாவில் உள்ள கோடிக்கணக்கான மக்களின் வாழ்வாதாரத்தை தங்க நகைக் கடன் மூலம் மேம்படுத்துவது.</li>
+
+<li> விரைவான நம்பகமான மற்றும் வெளிப்படையான நிதி சேவை நிறுவனமாக உருவெடுப்பது.</li>
+
+<li> வாடிக்கையாளர்களின் நிதி தேவைகளை பூர்த்தி செய்து குறைந்த வட்டியில் நகைக் கடன் வழங்குவது.</li>
+
+<li> விவசாயிகள் சிறு, குறு தொழில் புரிபவர்களுக்கு முன்னுரிமை அளிப்பது</li>
+
+<li> அணைத்து செயல்பாடுகளிலும் நேர்மை வெளிப்படைத்தன்மை மற்றும் பொறுப்புணர்வுடன் செயல்படுவது</li>
+</ul>
           </p>
 
-          <h5 class="mt-3">🤝 எங்கள் உறுதி</h5>
-          <p>
-            ஒவ்வொரு வாடிக்கையாளருக்கும் நேர்மையான சேவை,  
-            நியாயமான வட்டி மற்றும் முழு பாதுகாப்பு  
-            என்பதையே எங்கள் வாக்குறுதியாக வழங்குகிறோம்.
-          </p>
+          
         </div>
       </div>
+<div class="row mt-4 justify-content-center">
 
+<div class="col-md-10">
+<div class="box">
+
+<h5 class="text-center mb-3">🤝 எங்கள் இலக்கு</h5>
+
+<ul>
+<li> தங்க நகைக்கடன் கொடுப்பதில் தொடர்ந்து முதலிடத்தில் இருப்பதையும் வாடிக்கையாளர்களின் நம்பிக்கையை நிலைநிறுத்துவதையும் இலக்காக கொண்டோம்.</li>
+
+<li> கிராமமும் மற்றும் நகர்ப்புறங்களில் அதிக கிளைகளை திறந்து நிதிசேவை அனைத்து மக்களுக்கும் கிடைக்கச் செய்வது.</li>
+
+<li> டிஜிட்டல் சேவைகளை மேம்படுத்தி வாடிக்கையாளர்களுக்கு எளிதான மற்றும் விரைவான சேவையை வழங்குவது.</li>
+
+<li> வாடிக்கையாளர்களின் பொருளாதாரத்தை உயர்த்த உதவும் நிறுவனமாக இருப்பது.</li>
+</ul>
+
+</div>
+</div>
+
+</div>
     </div>
 
   </div>
@@ -109,35 +133,29 @@
 
 <!-- OFFERS -->
 <section id="offers">
- <h2 class="text-center mb-4">🔥 தங்க கடன் – சிறப்பு சலுகைகள் 🔥</h2>
 
-  <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+<h2 class="text-center mb-4">🔥 தங்க கடன் – சிறப்பு சலுகைகள் 🔥</h2>
 
-    <div class="carousel-inner">
+<div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
 
-      <div class="carousel-item active">
-        <img src="img1.jpg" class="d-block w-100">
-      </div>
+<div class="carousel-inner" id="bannerCarousel"></div>
 
-      <div class="carousel-item">
-        <img src="logo.jpg" class="d-block w-100">
-      </div>
+<button class="carousel-control-prev" type="button"
+data-bs-target="#carouselExample" data-bs-slide="prev">
 
-      <div class="carousel-item">
-        <img src="img2.jpg" class="d-block w-100">
-      </div>
+<span class="carousel-control-prev-icon"></span>
 
-    </div>
+</button>
 
-    <button class="carousel-control-prev" data-bs-target="#carouselExample" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </button>
+<button class="carousel-control-next" type="button"
+data-bs-target="#carouselExample" data-bs-slide="next">
 
-    <button class="carousel-control-next" data-bs-target="#carouselExample" data-bs-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </button>
+<span class="carousel-control-next-icon"></span>
 
-  </div>
+</button>
+
+</div>
+
 </section>
 
 <section id="calculator" class="hero">
@@ -155,11 +173,7 @@
     <p class="mt-2">* சந்தை நிலவரத்தைப் பொறுத்து மாறுபடும்</p>
   </div>
 </div>
-
-   
-
-
-
+</div></section>
 
 <section id="contact" class="contact-adv">
   <div class="container">
