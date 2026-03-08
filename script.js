@@ -45,10 +45,6 @@ async function fetchGoldRate() {
   }
 }
 
-
-
-
-
 // 🔹 Supabase Config
 const supabaseUrl = "https://cepjynxdrtgwxuvgxshy.supabase.co";
 const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNlcGp5bnhkcnRnd3h1dmd4c2h5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI3MDU1NjgsImV4cCI6MjA4ODI4MTU2OH0.iheA__HV_-UA9ryHecSyFEfbotIfq8gp95mJECsytIQ"
@@ -59,7 +55,7 @@ const client = createClient(supabaseUrl, supabaseKey);
 // 🔹 Bucket Name
 const bucket = "banners";
 
-let fileInput;
+let fileInput;   
 let bannerList;
 
 // 🔹 Load Images
@@ -106,12 +102,20 @@ async function loadCarouselBanners() {
 }
 window.addEventListener("load", function () {
 
-  fetchGoldRate();
+
+
+ fetchGoldRate();
 
   if(document.getElementById("bannerCarousel")){
     loadCarouselBanners();
   }
 
+  if(document.getElementById("bannerList")){
+    loadAdminBanners();
+  }
+
+  fileInput = document.getElementById("fileInput");
+  bannerList = document.getElementById("bannerList");
   fileInput = document.getElementById("fileInput");
   bannerList = document.getElementById("bannerList");
 
@@ -143,7 +147,7 @@ async function uploadBanners() {
 
   alert("Upload Success");
   fileInput.value = "";
-  loadCarouselBanners();
+  loadAdminBanners();
 }
 
 // 🔹 Delete
@@ -159,5 +163,27 @@ async function deleteBanner(fileName) {
   }
 
   alert("Deleted");
-  loadCarouselBanners();
+loadAdminBanners();
+}
+
+async function loadAdminBanners() {
+  const { data, error } = await client.storage.from(bucket).list("", { limit: 100 });
+  if (error) return console.error(error);
+
+  bannerList.innerHTML = "";
+
+  data.forEach(file => {
+    const imageUrl = `${supabaseUrl}/storage/v1/object/public/${bucket}/${file.name}`;
+    const div = document.createElement("div");
+    div.className = "col-md-3";
+
+    div.innerHTML = `
+      <div class="banner-box">
+        <img src="${imageUrl}">
+        <button class="btn btn-danger w-100 mt-2" onclick="deleteBanner('${file.name}')">Delete</button>
+      </div>
+    `;
+
+    bannerList.appendChild(div);
+  });
 }

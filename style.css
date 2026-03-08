@@ -32,7 +32,43 @@ color:#D4AF37;
 font-size:clamp(36px,7vw,85px);
 margin:0;
 }
+.experience-badge{
+position:absolute;
+right:20px;
+top:50%;
+transform:translateY(-50%);
+width:95px;
+height:95px;
 
+background: radial-gradient(circle at 30% 30%, #fff4b3, #D4AF37 60%, #b8962e);
+border-radius:50%;
+
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+
+color:#6F1414;
+font-weight:bold;
+
+box-shadow:
+0 6px 15px rgba(0,0,0,0.35),
+inset 0 2px 5px rgba(255,255,255,0.6);
+
+border:3px solid #f4d46a;
+
+animation:badgeGlow 3s ease-in-out infinite alternate;
+}
+
+.experience-badge .years{
+font-size:28px;
+line-height:1;
+}
+
+.experience-badge .text{
+font-size:12px;
+letter-spacing:1px;
+}
 /* LEFT LOGO */
 
 .logo-left{
@@ -111,12 +147,32 @@ height:100px;
     text-decoration: none;
   }
 
-  .carousel-item img{
-    height: 450px;
-    object-fit: cover;
-    border-radius: 15px;
-  }
+/* Banner Carousel */
+#carouselExample{
+max-width:1200px;
+margin:auto;
+}
+#bannerCarousel img{
+width:100%;
+height:420px;
+object-fit:contain;
+background:#fff;
+border-radius:10px;
+}
 
+/* Tablet */
+@media (max-width:992px){
+#bannerCarousel img{
+height:300px;
+}
+}
+
+/* Mobile */
+@media (max-width:576px){
+#bannerCarousel img{
+height:200px;
+}
+}
   footer{
     background: linear-gradient(90deg,var(--dark),var(--primary));
   }
@@ -157,11 +213,7 @@ height:100px;
   color: #fff;
 }
 /* 📱 Mobile Responsive Fix */
-@media (max-width: 768px) {
-
-  .top-header h3:first-child{
-    font-size: 36px !important;
-  }
+/* 📱 Mobile Responsive Fix */
 @media (max-width:768px){
 
 .logo-left,
@@ -172,52 +224,70 @@ display:block;
 margin:10px auto;
 height:70px;
 }
+.experience-badge{
+position:static;
+transform:none;
+margin:10px auto;
+width:70px;
+height:70px;
+}
+
+.experience-badge .years{
+font-size:20px;
+}
 
 .company-title{
 font-size:42px;
 }
 
+.navbar-nav{
+font-size:18px !important;
+text-align:center;
+}
 
-  .top-header h3:last-child{
-    font-size: 20px !important;
-  }
+section{
+padding:50px 12px;
+}
 
-  .navbar-nav{
-    font-size: 18px !important;
-    text-align: center;
-  }
+.box{
+padding:18px;
+}
 
-  section{
-    padding: 50px 12px;
-  }
+.contact-card{
+padding:22px 15px;
+}
 
-  .box{
-    padding: 18px;
-  }
+.contact-card h5{
+font-size:18px;
+}
 
-  .contact-card{
-    padding: 22px 15px;
-  }
+.contact-card p{
+font-size:14px;
+}
 
-  .contact-card h5{
-    font-size: 18px;
-  }
+.call{
+bottom:80px;
+right:15px;
+font-size:20px;
+}
 
-  .contact-card p{
-    font-size: 14px;
-  }
+.whatsapp img{
+width:45px;
+}
 
-  .carousel-item img{
-    height: 230px;
-  }
+}
+@keyframes badgeGlow{
 
-  .call{
-    bottom: 80px;
-    right: 15px;
-    font-size: 20px;
-  }
+from{
+box-shadow:
+0 6px 15px rgba(0,0,0,0.35),
+0 0 10px rgba(212,175,55,0.5);
+}
 
-  .whatsapp img{
-    width: 45px;
-  }
+to{
+box-shadow:
+0 6px 15px rgba(0,0,0,0.35),
+0 0 25px rgba(212,175,55,0.9);
+}
+
 }
