@@ -229,12 +229,17 @@ height:70px;
 position:static;
 transform:none;
 margin:10px auto;
-width:70px;
-height:70px;
+
+width:75px;
+height:75px;
 }
 
 .experience-badge .years{
 font-size:20px;
+}
+
+.experience-badge .text{
+font-size:9px;
 }
 
 .company-title{
